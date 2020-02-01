@@ -58,10 +58,16 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .todo-list .todo {
-  margin: 30px;
+  margin: 20px;
 }
 
 .todo-list .todo .title {
@@ -69,11 +75,9 @@ body {
 }
 
 .todo-list .add-new-todo {
+  margin-left: 40px;
   width: 80px;
-  height: 40px;
-  position: absolute;
-  left: 30px;
-  bottom: -30px;
+  height: 80px;
 }
 
 .inspect {
@@ -128,6 +132,57 @@ body {
   font-size: 18px;
 }
 
+.inspect .inspect-todo .todo .todos .item .item-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-container .checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-container .checkbox:hover ~ .checkmark {
+  background-color: #eee;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-container .checkbox:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-container .checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #111;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .inspect .inspect-todo .todo .todos .item .item-control {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -168,6 +223,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .inspect .control-todo .control-panel {
@@ -255,5 +313,60 @@ body {
 
 .todo .todos .completed .item-text {
   text-decoration: line-through;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-mask .modal-wrapper {
+  background-color: #d9ebf6;
+  border-radius: 10px;
+  width: 400px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-mask .modal-wrapper .modal-buttons {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal-mask .modal-wrapper .button {
+  width: 100px;
+  height: 80px;
 }
 /*# sourceMappingURL=style.css.map */

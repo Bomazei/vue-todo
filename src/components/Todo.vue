@@ -9,12 +9,21 @@
                 </li>
             </ul>
             <div class="todo-buttons">
-                <button @click="deleteTodo(id)" class="button delete-todo"><i class="flaticon-trash"></i></button>
+                <button @click="del = true" class="button delete-todo"><i class="flaticon-trash"></i></button>
                 <button @click="inspect" class="button inspect-todo"><i class="flaticon-search"></i></button>
             </div>
-            
+            <div class="modal-mask" v-if="del">
+            <div class="modal-wrapper">
+                УДАЛИТЬ ЭТУ ЗАМЕТКУ?
+                <div class="modal-buttons">
+                    <button class="button" @click="deleteTodo(id)">Удалить</button>
+                    <button class="button" @click="del = false">Отмена</button>
+                </div>
+                
+            </div>
         </div>
-    
+        </div>
+        
 
     
 </template>
@@ -26,6 +35,7 @@ export default {
         return{
             inputText: '',
             items: [],
+            del: false
         }
     },
     methods: {
@@ -34,7 +44,7 @@ export default {
         },
         deleteTodo: function(id) {
             this.$store.commit('delete', id)
-            
+            this.del = false
         }
     },
     

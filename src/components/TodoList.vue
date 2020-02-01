@@ -4,6 +4,7 @@
         <button class="button add-new-todo" @click="addNewTodo">
             Новая заметка
         </button>  
+        
     </div>
 </template>
 
