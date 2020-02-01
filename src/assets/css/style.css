@@ -1,0 +1,218 @@
+@import url("./font/flaticon.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #d9ebf6;
+}
+
+#app {
+  height: 100vh;
+}
+
+.button {
+  background-color: #d9ebf6;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+  outline: none;
+  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+  -webkit-box-shadow: inset -2px -2px 5px white, inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: inset -2px -2px 5px white, inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  border: none;
+  border-radius: 4px;
+  background-color: #eff9ff;
+  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
+  height: 24px;
+  padding-left: 6px;
+  outline: none;
+}
+
+.todo-list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.todo-list .todo {
+  margin: 30px;
+}
+
+.todo-list .todo .title {
+  text-align: center;
+}
+
+.todo-list .add-new-todo {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  left: 30px;
+  bottom: -30px;
+}
+
+.inspect {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inspect .inspect-todo {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inspect .inspect-todo .todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inspect .inspect-todo .todo .title {
+  margin-bottom: 12px;
+}
+
+.inspect .inspect-todo .todo .add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inspect .inspect-todo .todo .add .add-item {
+  margin-right: 10px;
+  width: 100%;
+}
+
+.inspect .inspect-todo .todo .add .add-item-button {
+  width: 28px;
+  font-size: 18px;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50px;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-control .button {
+  width: 24px;
+  height: 24px;
+}
+
+.inspect .inspect-todo .todo .todos .item .item-control .button i:before {
+  font-size: 16px;
+}
+
+.inspect .inspect-todo .todo .todos .completed {
+  border-bottom: none;
+}
+
+.inspect .inspect-todo .todo .todos .completed .item-control {
+  width: 24px;
+}
+
+.inspect .inspect-todo .todo .todos .completed .item-control .change-item {
+  display: none;
+}
+
+.inspect .control-todo {
+  width: 50%;
+  height: 100%;
+}
+
+.todo {
+  position: relative;
+  min-width: 280px;
+  min-height: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo .todo-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  bottom: 20px;
+  width: 240px;
+}
+
+.todo .todo-buttons .button {
+  width: 40px;
+  height: 40px;
+}
+
+.todo .todos {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.todo .todos .item {
+  position: relative;
+  margin: 6px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo .todos .item .checkbox {
+  margin-right: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.todo .todos .completed .item-text {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=style.css.map */

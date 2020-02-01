@@ -1,0 +1,171 @@
+@import url('./font/flaticon.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #d9ebf6;
+}
+#app{
+    height: 100vh; 
+}
+
+.button{
+    background-color: #d9ebf6;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: -1px -1px 5px rgba(255,255,255, 1),
+                3px 3px 5px rgba(0,0,0, 0.15);
+    &:hover{
+        box-shadow: inset -2px -2px 5px rgba(255,255,255, 1),
+                    inset 3px 3px 5px rgba(0,0,0, 0.1); 
+    }
+
+}
+.input{
+    border: none;
+    border-radius: 4px;
+    background-color: #eff9ff;
+    box-shadow: -1px -1px 5px rgba(255,255,255, 1),
+                3px 3px 5px rgba(0,0,0, 0.15);
+    height: 24px;
+    padding-left: 6px;
+    outline: none;
+}
+.todo-list{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    .todo{
+        margin: 30px;
+        .title{
+            text-align: center;
+        }
+    }
+    .add-new-todo{
+        width: 80px;
+        height: 40px;
+        position: absolute;
+        left: 30px;
+        bottom: -30px;
+        
+    }
+}
+.inspect{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+    .inspect-todo{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;     
+        .todo{
+            display: flex;
+            flex-direction: column;
+            
+            .title{
+                margin-bottom: 12px;
+            }
+            .add{
+                display: flex;
+                .add-item{
+                    margin-right: 10px;
+                    width: 100%;
+                }
+                .add-item-button{
+                    width: 28px;
+                    font-size: 18px;
+                    
+                }
+            }
+            .todos{
+                .item{
+                    .item-control{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 50px;
+                        .button{
+                            width: 24px;
+                            height: 24px;
+                            
+                            i:before{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                .completed{
+                    
+                    border-bottom: none;
+                    .item-control{
+                        width: 24px;
+                        .change-item{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    .control-todo{
+        width: 50%;
+        height: 100%;
+        
+    }
+}
+.todo{
+    position: relative;
+    min-width: 280px;
+    min-height: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -1px -1px 5px rgba(255,255,255, 1),
+                3px 3px 5px rgba(0,0,0, 0.1);
+    .todo-buttons{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 20px;
+        width: 240px;
+        
+        
+        .button{
+            width: 40px;
+            height: 40px;
+
+        }
+    }
+    .todos{
+        list-style: none;
+        padding: 10px 0;
+        .item{
+            position: relative;
+            margin: 6px 0;
+            display: flex;
+            justify-content: space-between; 
+            .checkbox{
+                margin-right: 2px;
+                width: 16px;
+                height: 16px;
+                
+            }
+        }
+        .completed{
+            .item-text{
+                text-decoration: line-through;
+            }
+        }
+        
+    }
+}
+
