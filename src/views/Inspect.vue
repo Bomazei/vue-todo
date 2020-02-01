@@ -5,8 +5,8 @@
             <div class="todo">
                 <input type="text" class="input title" v-model="todo.title">
                 <div class="add">
-                    <input type="text" placeholder="Добавить..." v-model="inputText" class="input add-item" maxlength="24">
-                    <button class="button add-item-button" v-on:click="addItem">+</button>
+                    <input type="text" placeholder="Добавить..." v-model="inputText" class="input add-item" maxlength="24" @keyup.enter="addItem">
+                    <button class="button add-item-button" @click="addItem">+</button>
                 </div>
                 <ul class="todos">
                     <li class="item" v-for="(item, index) in todo.items" :key="index" :class="{ completed: item.completed }">
@@ -15,10 +15,10 @@
                             <span v-if="! item.edit" class="checkbox-span"></span>
                             <span v-if="! item.edit" class="item-text">{{item.text}}</span>
                         </div>
-                        <input type="text" class="input item-text-editting" v-model="item.text" v-if="item.edit" v-focus v-on:keyup.enter="disableEdit(index)" v-on:blur="disableEdit(index)">
+                        <input type="text" class="input item-text-editting" v-model="item.text" v-if="item.edit" v-focus @keyup.enter="disableEdit(index)" v-on:blur="disableEdit(index)">
                         <div class="item-control">
-                            <button class="button change-item" v-on:click="enableEdit(index)"><i class="flaticon-pen"></i></button>
-                            <button class="button delete-item" v-on:click="deleteItem(index)"><i class="flaticon-trash"></i></button>
+                            <button class="button change-item" @click="enableEdit(index)"><i class="flaticon-pen"></i></button>
+                            <button class="button delete-item" @click="deleteItem(index)"><i class="flaticon-trash"></i></button>
                         </div>
                         
                     </li>
@@ -26,7 +26,15 @@
             </div>
         </div>
         <div class="control-todo">
-
+            <div class="control-panel">
+                <h3 class="control-panel-title">Панель управления</h3>
+                <button class="button button-save">Сохранить</button>
+                <router-link to="/main" tag="button" class="button button-back">Назад</router-link>
+                <button class="button button-delete">Удалить заметку</button>
+                <button class="button button-undo">UNDO</button>
+                <button class="button button-reundo">ReUNDO</button>
+            </div>
+            
         </div>
     </div>
 </template>
