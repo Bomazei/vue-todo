@@ -272,3 +272,20 @@ body{
         }
     }
 }
+@media screen and (max-width: 769px){
+    .todo-list{
+        .todo{
+            margin: 20px auto;
+        }
+    }
+    .inspect{
+        flex-direction: column;
+        .inspect-todo{
+            width: 100%;
+            margin: 20px 0;
+        }
+        .control-todo{
+            width: 100%;
+        }
+    }
+}
