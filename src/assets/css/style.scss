@@ -6,7 +6,11 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-$color-main: #d9ebf6;
+$color-main: #eee;
+$color-shadow-1: #ccc;
+$color-shadow-2: #aaa;
+
+
 body{
     background-color: $color-main;
 }
@@ -23,11 +27,11 @@ body{
     border-radius: 10px;
     font-weight: bold;
     outline: none;
-    box-shadow: -1px -1px 5px rgba(255,255,255, 1),
-                3px 3px 5px rgba(0,0,0, 0.15);
+    box-shadow: -1px -1px 5px $color-shadow-1,
+                3px 3px 5px $color-shadow-2;
     &:hover{
-        box-shadow: inset -2px -2px 5px rgba(255,255,255, 1),
-                    inset 3px 3px 5px rgba(0,0,0, 0.1); 
+        box-shadow: inset -2px -2px 5px $color-shadow-1,
+                    inset 3px 3px 5px $color-shadow-2; 
     }
 
 }
@@ -35,8 +39,8 @@ body{
     border: none;
     border-radius: 4px;
     background-color: #eff9ff;
-    box-shadow: -1px -1px 5px rgba(255,255,255, 1),
-                3px 3px 5px rgba(0,0,0, 0.15);
+    box-shadow: -1px -1px 5px $color-shadow-1,
+                3px 3px 5px $color-shadow-2;
     height: 24px;
     padding-left: 6px;
     outline: none;
@@ -58,11 +62,7 @@ body{
     .add-new-todo{
         margin-left: 40px;
         width: 80px;
-        height: 80px;
-        // position: absolute;
-        // left: 30px;
-        // bottom: -30px;
-        
+        height: 80px;        
     }
 }
 .inspect{
@@ -176,8 +176,8 @@ body{
             min-width: 280px;
             min-height: 400px;
             border-radius: 10px;
-            box-shadow: -1px -1px 5px rgba(255,255,255, 1),
-                3px 3px 5px rgba(0,0,0, 0.1);
+            box-shadow: -1px -1px 5px $color-shadow-1,
+                3px 3px 5px $color-shadow-2;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -201,8 +201,8 @@ body{
     min-height: 400px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: -1px -1px 5px rgba(255,255,255, 1),
-                3px 3px 5px rgba(0,0,0, 0.1);
+    box-shadow: -1px -1px 5px $color-shadow-1,
+                3px 3px 5px $color-shadow-2;
     .todo-buttons{
         display: flex;
         justify-content: space-between;

@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #d9ebf6;
+  background-color: #eee;
 }
 
 #app {
@@ -17,7 +17,7 @@ body {
 }
 
 .button {
-  background-color: #d9ebf6;
+  background-color: #eee;
   border: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,21 +31,21 @@ body {
   border-radius: 10px;
   font-weight: bold;
   outline: none;
-  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
-          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
+          box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
 }
 
 .button:hover {
-  -webkit-box-shadow: inset -2px -2px 5px white, inset 3px 3px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: inset -2px -2px 5px white, inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset -2px -2px 5px #ccc, inset 3px 3px 5px #aaa;
+          box-shadow: inset -2px -2px 5px #ccc, inset 3px 3px 5px #aaa;
 }
 
 .input {
   border: none;
   border-radius: 4px;
   background-color: #eff9ff;
-  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
-          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
+          box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
   height: 24px;
   padding-left: 6px;
   outline: none;
@@ -233,8 +233,8 @@ body {
   min-width: 280px;
   min-height: 400px;
   border-radius: 10px;
-  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
+          box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,8 +269,8 @@ body {
   min-height: 400px;
   padding: 20px;
   border-radius: 10px;
-  -webkit-box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: -1px -1px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
+          box-shadow: -1px -1px 5px #ccc, 3px 3px 5px #aaa;
 }
 
 .todo .todo-buttons {
@@ -336,7 +336,7 @@ body {
 }
 
 .modal-mask .modal-wrapper {
-  background-color: #d9ebf6;
+  background-color: #eee;
   border-radius: 10px;
   width: 400px;
   height: 200px;
