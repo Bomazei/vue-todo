@@ -12,10 +12,6 @@ body {
   background-color: #ddd;
 }
 
-#app {
-  height: 100vh;
-}
-
 .button {
   background-color: #ddd;
   border: none;
@@ -82,6 +78,7 @@ body {
 }
 
 .inspect {
+  padding-top: 20px;
   width: 60%;
   height: 100%;
   display: -webkit-box;

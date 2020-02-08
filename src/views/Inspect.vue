@@ -28,9 +28,12 @@
         <div class="control-todo">
             <div class="control-panel">
                 <h3 class="control-panel-title">Панель управления</h3>
+                
                 <button class="button button-save" @click="saveRes">Сохранить</button>
                 <button class="button button-back" @click="back = true">Назад</button>
                 <button class="button button-delete" @click="del = true">Удалить заметку</button>
+                <button class="button button-delete" @click="undo(todo.id)">Отмена действия</button>
+                <button class="button button-delete" @click="reUndo(todo.id)">Повторить отмененное</button>
             </div>
             
         </div>
@@ -45,7 +48,7 @@
             <div class="modal-wrapper" v-if="back">
                 ВЕРНУТЬСЯ НАЗАД?
                 <div class="modal-buttons">
-                    <router-link to="/main" tag="button" class="button">Вернуться</router-link>
+                    <router-link to="/" tag="button" class="button">Вернуться</router-link>
                     <button class="button" @click="back = false">Остаться</button>
                 </div>
             </div>
@@ -82,6 +85,7 @@ export default {
             if(this.inputText !== ''){
                 this.todo.items.push({text: this.inputText, edit: false, completed: false});
                 this.inputText = '';
+                this.todo.actions.push({name: 'add', item: this.todo.items[this.todo.items.length-1]})
             }
             this.$store.commit('saveData')
         },
@@ -89,7 +93,10 @@ export default {
             this.$store.commit('saveData')
         },
         deleteItem: function(index) {
+            this.todo.actions.push({name: 'delete', item: this.todo.items[index]})
             this.todo.items.splice(index, 1)
+            
+            this.$store.commit('saveData')
         },
         enableEdit: function(index) {
             this.todo.items[index].edit = true;
@@ -98,8 +105,14 @@ export default {
             this.todo.items[index].edit = false;
             this.$store.commit('saveData')
         },
+        undo: function(id) {
+            this.$store.commit('undo', id)
+        },
+        reUndo: function(id) {
+            return id
+        },
         deleteTodo: function(){
-            this.$router.push('/main')
+            this.$router.push('/')
             this.$store.commit('delete', this.url+1)
             this.del = false
         }
